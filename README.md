@@ -1,27 +1,16 @@
----
-title: CosmicVision
-colorFrom: blue
-colorTo: gray
-sdk: gradio
-app_file: app.py
-pinned: false
----
-
 # Sequence-Based Classification of Astronomical Objects Using Deep Learning
 
 **Project Name:** CosmicVision  
-**Program/Event:** Summer Siege × Odyssey 2026  
+**Event:** Summer Siege × Odyssey 2026  
 **Institution:** IIT Gandhinagar  
- 
+
 ---
 
-CosmicVision is an interactive astronomical image classification web application built using EfficientNet-B3 and Grad-CAM explainability.
+## Overview
 
-The application allows users to upload an astronomical image and receive a predicted celestial object category along with confidence scores and a Grad-CAM visualization.
+CosmicVision is an astronomical image classification web application built using EfficientNet-B3 with Grad-CAM explainability.
 
-## Supported Classes
-
-The model classifies astronomical images into five categories:
+The application allows users to upload an astronomical image and predicts one of five celestial object categories:
 
 - Elliptical Galaxy
 - Nebula
@@ -29,24 +18,41 @@ The model classifies astronomical images into five categories:
 - Spiral Galaxy
 - Star Cluster
 
-## Features
+Along with the predicted class, the dashboard displays confidence scores for all classes and a Grad-CAM visualization showing the image regions used by the model for prediction.
 
-- Upload an astronomical image
-- Predict the primary celestial object class
-- Display confidence scores for all five classes
-- Generate Grad-CAM visualization to highlight important image regions
-- Show inference time for the uploaded image
+---
 
-## Model Details
+## How to Run
 
-The classification model is based on EfficientNet-B3 with ImageNet pretrained weights. It was trained using a two-stage transfer learning pipeline:
+Clone or download this repository.
 
-1. Stage 1: The pretrained EfficientNet-B3 backbone was frozen and only the custom classifier head was trained.
-2. Stage 2: The full model was fine-tuned using differential learning rates.
+Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the dashboard:
+
+```bash
+python app.py
+```
+
+On the first run, the trained model checkpoint is downloaded automatically from Google Drive if it is not already present in the project folder.
+
+After the app starts, open the local URL shown in the terminal, usually:
+
+```text
+http://127.0.0.1:7860
+```
+
+Then upload an astronomical image and click **Predict**.
+
+---
 
 ## Final Performance
 
-The final model achieved the following results on the recreated held-out test set:
+The final model achieved the following results:
 
 | Metric | Value |
 |---|---:|
@@ -54,21 +60,7 @@ The final model achieved the following results on the recreated held-out test se
 | Macro F1-score | 90.62% |
 | Weighted F1-score | 93.52% |
 
-## Explainability
-
-Grad-CAM is used to visualize the regions of the uploaded astronomical image that contributed most strongly to the model's prediction. This helps make the model's decision more interpretable by showing whether it focuses on meaningful object regions such as galaxy cores, spiral arms, nebular structures, compact clusters, or planetary disks.
-
-## Files
-
-This Space uses the following main files:
-
-- `app.py`: Gradio application code
-- `best_model_stage2.pth`: Final trained EfficientNet-B3 model checkpoint
-- `class_mapping.json`: Class label mapping
-- `requirements.txt`: Python dependencies
-
 ---
 
-**IIT Gandhinagar**
-**Vipra Madanala**
-**B.Tech AI 2029**
+**Vipra Madanala**  
+**B.Tech AI 2025**
