@@ -37,9 +37,6 @@ Run the dashboard:
 ```bash
 python app.py
 ```
-
-On the first run, the trained model checkpoint is downloaded automatically from Google Drive if it is not already present in the project folder.
-
 After the app starts, open the local URL shown in the terminal, usually:
 
 ```text
