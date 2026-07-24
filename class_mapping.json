@@ -1,0 +1,23 @@
+{
+    "classes": [
+        "elliptical_galaxy",
+        "nebula",
+        "planetary_object",
+        "spiral_galaxy",
+        "star_cluster"
+    ],
+    "class_to_idx": {
+        "elliptical_galaxy": 0,
+        "nebula": 1,
+        "planetary_object": 2,
+        "spiral_galaxy": 3,
+        "star_cluster": 4
+    },
+    "idx_to_class": {
+        "0": "elliptical_galaxy",
+        "1": "nebula",
+        "2": "planetary_object",
+        "3": "spiral_galaxy",
+        "4": "star_cluster"
+    }
+}
