@@ -1,6 +1,0 @@
-gradio
-torch
-torchvision
-pillow
-numpy
-gdown
